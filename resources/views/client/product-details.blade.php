@@ -204,7 +204,7 @@
                     </div>
                     <h3 class="font-weight-semi-bold mb-4">{{$item->price}}</h3>
                     <p class="mb-4">{{$item->mo_ta}}</p>
-                    
+
                     <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
                         <form>
@@ -212,9 +212,9 @@
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" name="">
                                 <label for="">
-                        
+
                                     {{$d->size}}
-                                   
+
                                 </label>
                             </div>
                             @endforeach
@@ -239,7 +239,7 @@
                     <div class="d-flex mb-4">
                         <strong class="text-dark mr-3">Colors:</strong>
                         <form>
-                           
+
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="color-1" name="color">
                                 <label class="custom-control-label" for="color-1">xanh</label>
@@ -252,10 +252,10 @@
                                 <input type="radio" class="custom-control-input" id="color-1" name="color">
                                 <label class="custom-control-label" for="color-1">vàng</label>
                             </div>
-                          
+
                         </form>
                     </div>
-                   
+
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
@@ -270,9 +270,10 @@
                                 </button>
                             </div>
                         </div>
-                        <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
-                            Cart</button>
+                        <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> <a href="{{route('route_Frondten_user_addToCart',['id'=>$item->id])}}">Add To
+                                Cart</a> </button>
                     </div>
+
                     <div class="d-flex pt-2">
                         <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
