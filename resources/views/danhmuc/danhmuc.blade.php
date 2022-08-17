@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="form-group">
-                            <input type="text" name="search_ten_nguoi_dung" class="form-control" placeholder="Tên người dùng"
+                            <input type="text" name="search_ten_nguoi_dung" class="form-control"
                                    value="">
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                             </button>
                             <a href="{{ url('/user') }}" class="btn btn-default btn-sm "><i class="fa fa-remove"></i>
                                 Clear </a>
-                            <a href="" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
+                            <a href="{{route('route_BackEnd_danh_mucs_Add')}}" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
                                 Add new</a>
                         </div>
                     </div>
@@ -134,8 +134,7 @@
 
         <div class="box-body table-responsive no-padding">
             <form action="" method="post">
-                <span class="pull-right">Tổng số bản ghi tìm thấy: <span
-                        style="font-size: 15px;font-weight: bold;">8</span></span>
+
                 <div class="clearfix"></div>
                 <div class="double-scroll">
                     <table class="table table-bordered">
@@ -145,17 +144,17 @@
                             </th>
                             <th class="text-center">Tên danh mục</th>
                         </tr>
-                      
 
-                            
+
+
                             @foreach($listdm as $u)
                             <tr>
                                 {{--<td><input type="checkbox" name="chk_hv[]" class="chk_hv" id="chk_hv_{{$item->id}}" value="{{$item->id}}"> </td>--}}
                                 <td class="text-center">{{$u->cate_id}}</td>
-                                <td class="text-center"><a style="color:#333333;font-weight: bold;" href="" style="white-space:unset;text-align: justify;">{{$u->name_cate}}<i class="fa fa-edit"></i></a></td>
+                                <td class="text-center"><a style="color:#333333;font-weight: bold;" href="{{route('route_BackEnd_danh_mucs_Detail',['id'=>$u->cate_id])}}" style="white-space:unset;text-align: justify;">{{$u->name_cate}}<i class="fa fa-edit"></i></a></td>
                                 </tr>
                                 @endforeach
-                            
+
 
                     </table>
                 </div>

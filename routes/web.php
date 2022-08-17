@@ -29,12 +29,17 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/user', 'UserController@listUser');
    //danh muc
     Route::get('/danhmuc', 'DanhmucController@listDanhmuc');
+    Route::match(['get', 'post'], 'danhmuc/add', 'DanhmucController@add')->name('route_BackEnd_danh_mucs_Add');
+    Route::get('danhmuc/detail/{id}', 'DanhmucController@detail')->name('route_BackEnd_danh_mucs_Detail');
+    Route::post('/danhmuc/update/{id}', 'DanhmucController@update')
+        ->name('route_BackEnd_danh_mucs_Update');
+    Route::get('danhmuc/delete/{id}', 'DanhmucController@delete')->name('route_BackEnd_danh_mucs_Delete');
 //san pham
+
     Route::get('/sanpham', 'SanphamController@ListSanpham');
     Route::get('/sanpham/detail/{prod_id}', 'SanphamController@detail')->name('route_BackEnd_Sanpham_Detail');
     Route::post('/sanpham/detail/{prod_id}', 'SanphamController@update')->name('route_Backend_Sanpham_Update');
     Route::get('/sanpham/delete/{prod_id}', 'SanphamController@delete');
-
     Route::match(['get', 'post'], '/sanpham/add', 'SanphamController@addSp')->name('route_BackEnd_Sanpham_Add');
     //khuyen mai
     Route::get('/khuyenmai', 'KhuyenmaiController@listSell');
@@ -44,10 +49,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/size', 'SizeController@listSize');
     Route::get('/Chi_tiet_size', 'Ct_sizeController@listCtSize');
     Route::match(['get', 'post'], '/Chi_tiet_size/add', 'Ct_sizeController@addCtSize')->name('route_BackEnd_CtSize_Add');
-
     Route::match(['get', 'post'], '/size/add', 'SizeController@addSize')->name('route_BackEnd_Size_Add');
-//coloer
+//color
     Route::get('/color', 'SizeController@listSize');
-
     Route::get('/chi_tiet_hoadon', 'Chi_tiet_htController@chiTietHt');
 });
